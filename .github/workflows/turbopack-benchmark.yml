@@ -45,8 +45,9 @@ jobs:
         run: cargo codspeed build -p next-api
 
       - name: Run the benchmarks
-        uses: CodSpeedHQ/action@v3
+        uses: CodSpeedHQ/action@v4
         with:
+          mode: walltime
           run: cargo codspeed run
           token: ${{ secrets.CODSPEED_TOKEN }}
 
@@ -82,8 +83,9 @@ jobs:
         run: cargo codspeed build -p turbopack-cli small_apps
 
       - name: Run the benchmarks
-        uses: CodSpeedHQ/action@v3
+        uses: CodSpeedHQ/action@v4
         with:
+          mode: walltime
           run: cargo codspeed run
           token: ${{ secrets.CODSPEED_TOKEN }}
 
@@ -106,7 +108,8 @@ jobs:
         run: cargo codspeed build -p turbopack -p turbopack-bench
 
       - name: Run the benchmarks
-        uses: CodSpeedHQ/action@v3
+        uses: CodSpeedHQ/action@v4
         with:
+          mode: walltime
           run: cargo codspeed run
           token: ${{ secrets.CODSPEED_TOKEN }}
