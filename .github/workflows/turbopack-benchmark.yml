@@ -42,6 +42,8 @@ jobs:
           tool: cargo-codspeed@3.0.5
 
       - name: Build app build benchmarks
+        env:
+          CODSPEED_RUNNER_MODE: walltime
         run: cargo codspeed build -p next-api
 
       - name: Run the benchmarks
@@ -80,6 +82,8 @@ jobs:
           pnpm install --loglevel error
 
       - name: Build app build benchmarks
+        env:
+          CODSPEED_RUNNER_MODE: walltime
         run: cargo codspeed build -p turbopack-cli small_apps
 
       - name: Run the benchmarks
@@ -105,6 +109,8 @@ jobs:
           tool: cargo-codspeed@3.0.5
 
       - name: Build the benchmark target(s)
+        env:
+          CODSPEED_RUNNER_MODE: walltime
         run: cargo codspeed build -p turbopack -p turbopack-bench
 
       - name: Run the benchmarks
