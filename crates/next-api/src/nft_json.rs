@@ -521,7 +521,7 @@ mod tests {
             BackendOptions::default(),
             noop_backing_storage(),
         ));
-        tt.run_once(async {
+        tt.run(async {
             // Test normal glob patterns without relative prefixes
             let base_path = create_test_fs_path("project/src");
 
@@ -548,7 +548,7 @@ mod tests {
             BackendOptions::default(),
             noop_backing_storage(),
         ));
-        tt.run_once(async {
+        tt.run(async {
             let base_path = create_test_fs_path("project/src");
 
             // Single ./ prefix
@@ -577,7 +577,7 @@ mod tests {
             BackendOptions::default(),
             noop_backing_storage(),
         ));
-        tt.run_once(async {
+        tt.run(async {
             let base_path = create_test_fs_path("project/src/components");
 
             // Single ../ prefix
@@ -607,7 +607,7 @@ mod tests {
             BackendOptions::default(),
             noop_backing_storage(),
         ));
-        tt.run_once(async {
+        tt.run(async {
             let base_path = create_test_fs_path("project/src/components");
 
             // ../ followed by ./
@@ -637,7 +637,7 @@ mod tests {
             BackendOptions::default(),
             noop_backing_storage(),
         ));
-        tt.run_once(async {
+        tt.run(async {
             // Test navigating out of project root with empty path
             let empty_path = create_test_fs_path("");
             let result = relativize_glob("../outside.js", empty_path);
